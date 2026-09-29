@@ -98,3 +98,18 @@ hamburger.addEventListener('click', () => {
     navLinksEl.style.borderRadius = '12px';
     navLinksEl.style.border = '1px solid var(--border)';
 });
+// ===== HOBBY TABS =====
+const tabBtns = document.querySelectorAll('.tab-btn');
+const tabContents = document.querySelectorAll('.tab-content');
+
+tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        // Remove active from all
+        tabBtns.forEach(b => b.classList.remove('active'));
+        tabContents.forEach(c => c.classList.remove('active'));
+
+        // Add active to clicked
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+});
